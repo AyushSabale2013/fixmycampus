@@ -1,0 +1,32 @@
+/* POST PAGE TITLE */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUT CARD */
+.post-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+/* AI RESULT BOX */
+#resultBox {
+  margin-top: 15px;
+}
+
+#resultBox .result-card {
+  background: #eef2ff;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+/* RESULT TEXT */
+.result-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}

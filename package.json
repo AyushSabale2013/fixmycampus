@@ -1,0 +1,15 @@
+{
+  "name": "fixmycampus",
+  "version": "1.0.0",
+  "description": "Smart campus issue resolution system with ML-based categorization and prioritization (prototype)",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo \"Open index.html in browser\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyushSabale2013/fixmycampus.git"
+  },
+  "author": "Ayush Sabale",
+  "license": "ISC"
+}

@@ -1,0 +1,36 @@
+/* TOP BUTTONS */
+.top-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #667eea;
+  color: white;
+  font-weight: 500;
+}
+
+.top-buttons a:hover {
+  background: #5a67d8;
+}
+
+/* ISSUE CARD ENHANCEMENT */
+.issue-card {
+  transition: transform 0.2s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-3px);
+}
+
+/* HEADINGS */
+h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
