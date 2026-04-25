@@ -1,32 +1,80 @@
-/* POST PAGE TITLE */
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* INPUT CARD */
+/* POST CARD */
 .post-card {
   background: white;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.post-card h2 {
+  text-align: center;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
-/* AI RESULT BOX */
-#resultBox {
-  margin-top: 15px;
-}
-
-#resultBox .result-card {
-  background: #eef2ff;
-  padding: 15px;
+/* TEXTAREA */
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
   border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 12px;
+  resize: none;
+  transition: 0.2s;
+}
+
+textarea:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102,126,234,0.3);
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  background: linear-gradient(45deg, #667eea, #5a67d8);
+  color: white;
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102,126,234,0.4);
+}
+
+/* CLICK */
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+/* RESULT BOX */
+#resultBox {
+  margin-top: 20px;
+}
+
+/* RESULT CARD */
+.result-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
   border-left: 4px solid #667eea;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
 }
 
 /* RESULT TEXT */
 .result-card p {
-  margin: 5px 0;
+  margin: 6px 0;
   font-size: 14px;
 }
