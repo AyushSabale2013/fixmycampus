@@ -1,36 +1,156 @@
-/* TOP BUTTONS */
-.top-buttons {
+/* ===============================
+   PROFILE SECTION
+================================ */
+.profile-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* LEFT SIDE */
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-icon {
+  font-size: 42px;
+  color: #60a5fa;
+}
+
+.welcome-text {
+  font-size: 12px;
+  color: #cbd5f5;
+}
+
+/* RIGHT BUTTONS */
+.profile-actions {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
-.top-buttons a {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
+.btn-main,
+.btn-secondary {
+  padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;
-  background: #667eea;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.btn-main {
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
   color: white;
-  font-weight: 500;
 }
 
-.top-buttons a:hover {
-  background: #5a67d8;
+.btn-secondary {
+  background: #e5e7eb;
+  color: black;
 }
 
-/* ISSUE CARD ENHANCEMENT */
-.issue-card {
-  transition: transform 0.2s ease;
+.btn-main:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
 }
 
-.issue-card:hover {
-  transform: translateY(-3px);
-}
 
-/* HEADINGS */
-h3 {
+/* ===============================
+   SECTION TITLE
+================================ */
+.section-title {
+  color: white;
   margin-bottom: 15px;
   font-weight: 600;
+}
+
+
+/* ===============================
+   GRID LAYOUT
+================================ */
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+
+/* ===============================
+   ISSUE CARD (FINAL CLEAN VERSION)
+================================ */
+.issue-card {
+  background: linear-gradient(135deg, #f8fafc, #eef2ff); /* soft light blue */
+  color: #111;
+
+  padding: 16px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  transition: 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.issue-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(59, 130, 246, 0.25),
+    0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* TEXT IMPROVEMENT */
+.issue-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+
+/* ===============================
+   BADGES
+================================ */
+.badges {
+  margin-top: 8px;
+}
+
+.badge {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+.badge-category {
+  background: #6366f1;
+  color: white;
+}
+
+.badge-high {
+  background: #ef4444;
+  color: white;
+}
+
+.badge-medium {
+  background: #f59e0b;
+  color: black;
+}
+
+.badge-low {
+  background: #10b981;
+  color: white;
+}
+
+
+/* ===============================
+   SCORE
+================================ */
+.score {
+  float: right;
+  font-weight: 600;
+  color: #3b82f6;
 }

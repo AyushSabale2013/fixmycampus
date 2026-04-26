@@ -1,32 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard</title>
+  <title>Dashboard - FixMyCampus</title>
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dashboard.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-  <span>FixMyCampus</span>
-  <span id="user"></span>
+  <div class="logo">
+    <i class="fas fa-tools"></i> FixMyCampus
+  </div>
+  <div id="user"></div>
 </nav>
 
 <div class="container">
 
-  <div class="top-buttons">
-    <a href="post.html">Post Issue</a>
-    <a href="activity.html">My Activity</a>
+  <!-- PROFILE + ACTIONS -->
+  <div class="profile-section">
+
+    <div class="profile-left">
+      <i class="fas fa-user-circle profile-icon"></i>
+      <div>
+        <p class="welcome-text">Welcome</p>
+        <h3 id="user"></h3>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <a href="post.html" class="btn-main">
+        <i class="fas fa-plus"></i> Post
+      </a>
+
+      <a href="activity.html" class="btn-secondary">
+        <i class="fas fa-history"></i> History
+      </a>
+    </div>
+
   </div>
 
-  <h3>Latest Issues</h3>
-  <div id="dashboard"></div>
+  <!-- TITLE -->
+  <h3 class="section-title">🔥 Latest Campus Issues</h3>
+
+  <!-- GRID -->
+  <div id="dashboard" class="issue-grid"></div>
 
 </div>
 
 <script src="assets/js/storage.js"></script>
 <script src="assets/js/dashboard.js"></script>
+
 </body>
 </html>

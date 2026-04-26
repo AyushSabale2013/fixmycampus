@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Register - FixMyCampus</title>
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/auth.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="auth-body">
 
 <div class="auth-card">
-  <h2>Register</h2>
-  <input id="registerName" placeholder="Enter name">
-  <button onclick="register()">Register</button>
 
-  <p>Already have an account? <a href="login.html">Login</a></p>
+  <div class="auth-logo">
+    <i class="fas fa-user-plus"></i>
+  </div>
+
+  <h2>Create Account</h2>
+  <p class="auth-sub">Join FixMyCampus</p>
+
+  <div class="input-group">
+    <i class="fas fa-user"></i>
+    <input id="name" placeholder="Full Name">
+  </div>
+
+  <div class="input-group">
+    <i class="fas fa-envelope"></i>
+    <input id="email" placeholder="College Email">
+  </div>
+
+  <button class="auth-btn" onclick="register()">Register</button>
+
+  <p id="error" class="error-text"></p>
+
+  <p class="switch-text">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </p>
+
 </div>
 
 <script src="assets/js/storage.js"></script>
