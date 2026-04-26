@@ -1,16 +1,20 @@
-/* GLOBAL */
+/* ========================================
+   GLOBAL RESET
+======================================== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
-
-  background: linear-gradient(135deg, #1e293b, #1e3a8a);
 }
 
-/* NAVBAR */
+
+/* ========================================
+   NAVBAR
+======================================== */
 .navbar {
   background: rgba(17, 24, 39, 0.9);
   color: white;
@@ -23,29 +27,59 @@ body {
   backdrop-filter: blur(8px);
 }
 
-/* CONTAINER */
+
+/* ========================================
+   CONTAINER
+======================================== */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 30px 20px;
 }
 
-/* HEADINGS */
+
+/* ========================================
+   HEADINGS
+======================================== */
 h2, h3 {
   margin-bottom: 15px;
   font-weight: 600;
 }
 
-/* BUTTON */
+
+/* ========================================
+   BUTTONS
+======================================== */
 .btn {
   padding: 10px 16px;
   border-radius: 8px;
+
   background: linear-gradient(45deg, #667eea, #5a67d8);
   color: white;
+
   border: none;
   cursor: pointer;
   font-size: 14px;
-  transition: 0.2s;
+
+  transition: 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transition: 0.4s;
+}
+
+.btn:hover::after {
+  left: 100%;
 }
 
 .btn:hover {
@@ -53,36 +87,30 @@ h2, h3 {
   box-shadow: 0 6px 15px rgba(102,126,234,0.3);
 }
 
-/* TOP BUTTONS */
-.top-buttons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.top-buttons a {
-  flex: 1;
-  text-align: center;
-  padding: 12px;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #667eea, #5a67d8);
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-.top-buttons a:hover {
-  transform: translateY(-2px);
-}
-
-/* ISSUE CARD */
-.issue-card {
+/* Button variants */
+.btn.primary {
   background: white;
+  color: black;
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+
+/* ========================================
+   ISSUE CARD
+======================================== */
+.issue-card {
+  background: #ffffff;
   padding: 16px;
   border-radius: 12px;
+
   margin-bottom: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
   transition: 0.2s;
 }
 
@@ -90,7 +118,10 @@ h2, h3 {
   transform: translateY(-3px);
 }
 
-/* BADGES */
+
+/* ========================================
+   BADGES
+======================================== */
 .badge {
   padding: 4px 8px;
   font-size: 11px;
@@ -113,109 +144,176 @@ h2, h3 {
   color: white;
 }
 
-/* TEXTAREA */
+
+/* ========================================
+   TEXTAREA
+======================================== */
 textarea {
   width: 100%;
   height: 110px;
+
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ddd;
-  margin-bottom: 10px;
+
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
-/* RESULT BOX */
+
+/* ========================================
+   RESULT BOX
+======================================== */
 #resultBox {
   margin-top: 10px;
   background: white;
+
   padding: 12px;
   border-radius: 10px;
+
   border-left: 4px solid #667eea;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* HOME PAGE */
+
+/* ========================================
+   HOME PAGE
+======================================== */
 .home-body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
 }
 
 .home-container {
   text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-.home-container h1 {
-  font-size: 40px;
+
+/* ========================================
+   LOGO IMAGE (FIXED PROPERLY)
+======================================== */
+.app-logo {
+  width: 150px;        /* 2x bigger */
+  height: auto;
+
+  display: block;
+  margin: 0 auto 16px auto;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+  transition: 0.3s ease;
+}
+
+.app-logo:hover {
+  transform: scale(1.05);
+}
+
+
+/* ========================================
+   LOGO TEXT
+======================================== */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.home-container p {
-  opacity: 0.9;
-}
 
-.home-container a {
-  margin: 10px;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  background: white;
-  color: black;
-  font-weight: 500;
-}
-
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.logo i {
-  font-size: 28px;
-  color: #ffffff;
-}
-
-/* TAGLINE */
+/* ========================================
+   TAGLINE
+======================================== */
 .tagline {
-  font-size: 14px;
-  opacity: 0.9;
+  font-size: 16px;
   margin-bottom: 25px;
 }
 
-/* BUTTON GROUP */
+.tagline span {
+  font-weight: 600;
+  position: relative;
+}
+
+.tagline span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  width: 100%;
+  height: 2px;
+  background: white;
+  opacity: 0.6;
+}
+
+
+/* ========================================
+   BUTTON GROUP
+======================================== */
 .home-buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
 }
 
-/* PRIMARY BUTTON */
-.btn.primary {
-  background: white;
-  color: black;
+
+/* ========================================
+   STAFF SECTION (FUTURE READY)
+======================================== */
+.staff-section {
+  margin-top: 20px;
 }
 
-/* SECONDARY BUTTON */
-.btn.secondary {
+.staff-btn {
   background: rgba(255,255,255,0.2);
   color: white;
   border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* ICON SPACING */
-.btn i {
-  margin-right: 6px;
+.staff-options {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
-/* FADE IN PAGE */
+.staff-options button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+
+  background: white;
+  color: black;
+  font-size: 13px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.staff-options button:hover {
+  transform: translateY(-2px);
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -225,72 +323,4 @@ textarea {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.home-container {
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-/* LOGO ANIMATION */
-@keyframes popIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.logo {
-  animation: popIn 0.6s ease;
-}
-
-/* TAGLINE STYLE */
-.tagline {
-  font-size: 16px;
-  margin-bottom: 25px;
-  font-weight: 400;
-}
-
-/* HIGHLIGHT TEXT */
-.tagline span {
-  color: #ffffff;
-  font-weight: 600;
-  position: relative;
-}
-
-/* UNDERLINE EFFECT */
-.tagline span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 2px;
-  background: white;
-  opacity: 0.6;
-}
-
-/* BUTTON IMPROVEMENT */
-.btn {
-  position: relative;
-  overflow: hidden;
-}
-
-/* BUTTON SHINE EFFECT */
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  transition: 0.4s;
-}
-
-.btn:hover::after {
-  left: 100%;
 }

@@ -1,0 +1,16 @@
+
+main engine of system would be like this 
+
+User Input
+   ↓
+Preprocessing
+   ↓
+Classification Engine
+   ↓
+Priority Detection
+   ↓
+Department Routing
+   ↓
+Dashboard Display
+
+

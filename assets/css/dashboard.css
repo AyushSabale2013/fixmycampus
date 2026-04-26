@@ -1,53 +1,246 @@
 /* ===============================
+   BACKGROUND (VISIBLE + CLEAN)
+================================ */
+.dashboard-body {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+
+  /* FIXED PATH (NO \ , USE %20 OR RENAME FILE) */
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("../images/backgroundof%20dashboard.jpg");
+
+  background-repeat: repeat;
+
+  /* IMPORTANT: bigger size so image is visible */
+  background-size: 500px;
+}
+
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar.light {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 30px;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* ===============================
+   LOGO
+================================ */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-img {
+  width: 65px;   /* was 50 → bigger */
+  height: 65px;
+  object-fit:fill;
+}
+
+.nav-logo-text {
+  font-size: 26px;   /* was 22 */
+  font-weight: 600;
+  color: #1e293b;
+}
+
+
+/* ===============================
+   SEARCH BAR
+================================ */
+.nav-search {
+  display: flex;
+  align-items: center;
+
+  width: 480px;        /* was 400 → 1.2x wider */
+  max-width: 55%;
+
+  background: #f1f5f9;
+  border-radius: 60px;
+
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+
+/* INPUT */
+.nav-search input {
+  flex: 1;
+  border: none;
+
+  padding: 15px 18px;   /* was ~10 → taller (1.5x feel) */
+  font-size: 15px;
+
+  background: transparent;
+  outline: none;
+}
+
+/* SEARCH BUTTON */
+.search-btn {
+  padding: 15px 18px;   /* match height */
+  font-size: 16px;
+
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  border: none;
+  color: white;
+
+  cursor: pointer;
+}
+
+
+/* ===============================
+   RIGHT SIDE
+================================ */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+/* ICON BUTTONS (HOME + LOGIN) */
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+  background: #f1f5f9;
+
+  color: #374151;
+  font-size: 18px;
+
+  transition: 0.25s;
+}
+
+.nav-icon-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+
+/* POST BUTTON (MAIN CTA) */
+.nav-post-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  color: white;
+
+  font-size: 18px;
+
+  box-shadow: 0 6px 18px rgba(59,130,246,0.35);
+
+  transition: 0.25s;
+}
+
+.nav-post-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px;
+}
+
+
+/* ===============================
    PROFILE SECTION
 ================================ */
 .profile-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 22px;
   margin-bottom: 25px;
+
+  border-radius: 14px;
+  background: rgba(255,255,255,0.95);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* LEFT SIDE */
+/* LEFT */
 .profile-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
 
-.profile-icon {
-  font-size: 42px;
-  color: #60a5fa;
+/* AVATAR */
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  object-fit: contain;
+
+  background: #f1f5f9;
+  padding: 5px;
 }
 
-.welcome-text {
-  font-size: 12px;
-  color: #cbd5f5;
+/* DETAILS */
+.profile-name {
+  font-size: 16px;
+  font-weight: 600;
 }
 
-/* RIGHT BUTTONS */
+.profile-email {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ACTIONS */
 .profile-actions {
   display: flex;
   gap: 10px;
 }
 
-.btn-main,
-.btn-secondary {
+.btn-main {
   padding: 10px 14px;
   border-radius: 8px;
+
+  background: #3b82f6;
+  color: white;
   text-decoration: none;
-  font-size: 14px;
+
   transition: 0.25s;
 }
 
-.btn-main {
-  background: linear-gradient(45deg, #3b82f6, #2563eb);
-  color: white;
-}
-
 .btn-secondary {
+  padding: 10px 14px;
+  border-radius: 8px;
+
   background: #e5e7eb;
   color: black;
+  text-decoration: none;
+
+  transition: 0.25s;
 }
 
 .btn-main:hover,
@@ -57,17 +250,16 @@
 
 
 /* ===============================
-   SECTION TITLE
+   TITLE
 ================================ */
 .section-title {
-  color: white;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 
 /* ===============================
-   GRID LAYOUT
+   GRID
 ================================ */
 .issue-grid {
   display: grid;
@@ -77,37 +269,23 @@
 
 
 /* ===============================
-   ISSUE CARD (FINAL CLEAN VERSION)
+   ISSUE CARD
 ================================ */
 .issue-card {
-  background: linear-gradient(135deg, #f8fafc, #eef2ff); /* soft light blue */
-  color: #111;
-
+  background: white;
   padding: 16px;
+
   border-radius: 12px;
+  border: 1px solid #e5e7eb;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
 
-  box-shadow:
-    0 6px 15px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
-/* HOVER EFFECT */
 .issue-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 12px 30px rgba(59, 130, 246, 0.25),
-    0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* TEXT IMPROVEMENT */
-.issue-card strong {
-  display: block;
-  margin-bottom: 6px;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 

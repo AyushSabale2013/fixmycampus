@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - FixMyCampus</title>
 
   <link rel="stylesheet" href="assets/css/style.css">
@@ -8,55 +11,102 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<body class="dashboard-body">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">
-    <i class="fas fa-tools"></i> FixMyCampus
+<!-- ===============================
+     NAVBAR (UPGRADED)
+================================ -->
+<header class="navbar light">
+
+  <!-- LOGO -->
+  <div class="nav-logo">
+    <img src="assets/images/fixMyCampus.png" class="nav-logo-img">
+    <span class="nav-logo-text">FixMyCampus</span>
   </div>
-  <div id="user"></div>
-</nav>
 
-<div class="container">
+  <!-- SEARCH -->
+  <div class="nav-search">
+    <input type="text" placeholder="Search campus issues..." id="searchInput">
+    <button class="search-btn">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
 
-  <!-- PROFILE + ACTIONS -->
-  <div class="profile-section">
+  <!-- RIGHT SIDE -->
+  <div class="nav-right">
+
+    <!-- HOME -->
+    <a href="index.html" class="nav-icon-btn" title="Home">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <!-- LOGIN -->
+    <a href="login.html" class="nav-icon-btn" title="Login">
+      <i class="fas fa-sign-in-alt"></i>
+    </a>
+
+    <!-- POST ISSUE -->
+    <a href="post.html" class="nav-post-btn" title="Post Issue">
+      <i class="fas fa-plus"></i>
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- ===============================
+     MAIN CONTENT
+================================ -->
+<main class="container">
+
+  <!-- PROFILE -->
+  <section class="profile-section">
 
     <div class="profile-left">
-      <i class="fas fa-user-circle profile-icon"></i>
-      <div>
-        <p class="welcome-text">Welcome</p>
-        <h3 id="user"></h3>
+      <img src="assets/images/userlogo.png" class="profile-avatar">
+
+      <div class="profile-details">
+        <div class="profile-name" id="userName">Ayush Sabale</div>
+        <div class="profile-email" id="userEmail">112415039@cse.iiitp.ac.in</div>
       </div>
     </div>
 
     <div class="profile-actions">
-      <a href="post.html" class="btn-main">
-        <i class="fas fa-plus"></i> Post
-      </a>
-
-      <a href="activity.html" class="btn-secondary">
-        <i class="fas fa-history"></i> History
-      </a>
+      <a href="post.html" class="btn-main">Post Issue</a>
+      <a href="activity.html" class="btn-secondary">History</a>
     </div>
 
-  </div>
+  </section>
 
-  <!-- TITLE -->
-  <h3 class="section-title">🔥 Latest Campus Issues</h3>
+  <!-- ISSUES -->
+  <section>
+    <h3 class="section-title">Latest Campus Issues</h3>
+    <div id="dashboard" class="issue-grid"></div>
+  </section>
 
-  <!-- GRID -->
-  <div id="dashboard" class="issue-grid"></div>
+</main>
 
-</div>
 
+<!-- ===============================
+     SCRIPTS
+================================ -->
 <script src="assets/js/storage.js"></script>
 <script src="assets/js/dashboard.js"></script>
+
+<script>
+function toggleUserMenu() {
+  document.getElementById("userMenu").classList.toggle("hidden");
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>

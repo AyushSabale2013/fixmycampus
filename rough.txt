@@ -1,2 +1,0 @@
-add some more catgories
-improve score calc

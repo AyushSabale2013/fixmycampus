@@ -1,37 +1,56 @@
-// dashboard.js
+function getIssues() {
+  return JSON.parse(localStorage.getItem("issues")) || [];
+}
 
-const user = getUser();
+function getCurrentUser() {
+  return JSON.parse(localStorage.getItem("currentUser"));
+}
+
+const user = getCurrentUser();
 
 if (!user) {
   window.location.href = "login.html";
 }
 
-document.getElementById("user").innerText = "Welcome, " + user;
+document.getElementById("userName").innerText = user.name;
+document.getElementById("userEmail").innerText = user.email;
 
-function loadDashboard() {
-  const issues = getIssues();
-  const container = document.getElementById("dashboard");
+let issues = getIssues();
 
-  container.innerHTML = "";
+// sort by score
+issues.sort((a, b) => b.score - a.score);
 
-  if (issues.length === 0) {
-    container.innerHTML = "<p>No issues yet</p>";
+// keep only top 10
+issues = issues.slice(0, 10);
+
+function render(list) {
+  const box = document.getElementById("dashboard");
+
+  if (list.length === 0) {
+    box.innerHTML = "No issues found";
     return;
   }
 
-  issues.slice(-10).reverse().forEach(issue => {
-    container.innerHTML += `
-      <div class="issue-card">
-        <strong>${issue.text}</strong><br>
-
-        <small>
-          ${issue.category} | ${issue.priority} | ${issue.status}
-        </small><br>
-
-        <small>Score: ${issue.score}</small>
-      </div>
-    `;
-  });
+  box.innerHTML = list.map(i => `
+    <div class="issue-card">
+      <strong>${i.text}</strong><br>
+      ${i.category} | ${i.priority}<br>
+      Score: ${i.score}
+    </div>
+  `).join("");
 }
 
-loadDashboard();
+render(issues);
+
+// search
+document.getElementById("searchInput").addEventListener("input", function () {
+  const q = this.value.toLowerCase();
+
+  const filtered = issues.filter(i =>
+    i.text.toLowerCase().includes(q) ||
+    i.category.toLowerCase().includes(q) ||
+    i.priority.toLowerCase().includes(q)
+  );
+
+  render(filtered);
+});
