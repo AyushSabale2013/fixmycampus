@@ -1,34 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
   <title>Post Issue - FixMyCampus</title>
 
-  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/post.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="post-body">
 
-<div class="container">
+<!-- NAVBAR -->
+<header class="navbar light">
 
-  <div class="post-card">
-    <h2>🚨 Report an Issue</h2>
+  <!-- LOGO -->
+  <div class="nav-logo">
+    <img src="assets/images/fixMyCampus.png" class="nav-logo-img">
+    <span class="nav-logo-text">FixMyCampus</span>
+  </div>
 
-    <textarea id="issueInput" placeholder="Describe your issue clearly..."></textarea>
-
-    <button class="submit-btn" onclick="submitIssue()">
-      🚀 Submit Issue
+  <!-- SEARCH -->
+  <div class="nav-search">
+    <input type="text" placeholder="Search campus issues..." id="searchInput">
+    <button class="search-btn">
+      <i class="fas fa-search"></i>
     </button>
   </div>
 
-  <div id="resultBox"></div>
+  <!-- RIGHT SIDE -->
+  <div class="nav-right">
+
+    <!-- HOME -->
+    <a href="index.html" class="nav-icon-btn" title="Home">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <!-- LOGIN -->
+    <a href="login.html" class="nav-icon-btn" title="Login">
+      <i class="fas fa-sign-in-alt"></i>
+    </a>
+
+    <!-- POST ISSUE -->
+    <a href="post.html" class="nav-post-btn" title="Post Issue">
+      <i class="fas fa-plus"></i>
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- MAIN -->
+<div class="container">
+
+  <div class="post-card">
+
+    <h2>Describe Your Problem</h2>
+
+    <!-- TEXT -->
+    <textarea id="issueInput" placeholder="Explain your issue clearly..."></textarea>
+
+    <!-- BUTTONS -->
+    <div class="action-buttons">
+
+      <label class="btn attach-btn">
+        <i class="fas fa-paperclip"></i> Add Attachment
+        <input type="file" id="fileInput" hidden>
+      </label>
+
+      <button class="btn submit-btn" onclick="submitIssue()">
+        <i class="fas fa-paper-plane"></i> Submit
+      </button>
+
+    </div>
+
+    <!-- PREVIEW -->
+    <div id="preview"></div>
+
+    <!-- RESULT -->
+    <div id="resultBox"></div>
+
+  </div>
 
 </div>
 
-<script src="assets/js/storage.js"></script>
 <script src="assets/js/post.js"></script>
+
+<script>
+// login/logout toggle
+const user = JSON.parse(localStorage.getItem("currentUser"));
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (user) {
+  loginBtn.classList.add("hidden");
+  logoutBtn.classList.remove("hidden");
+}
+
+logoutBtn.onclick = () => {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+};
+</script>
 
 </body>
 </html>

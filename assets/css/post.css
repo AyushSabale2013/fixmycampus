@@ -1,35 +1,184 @@
 /* ===============================
-   PAGE BACKGROUND (SOFT BLUE)
+   GLOBAL
 ================================ */
-.post-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+* {
+  box-sizing: border-box;   /* fixes overflow everywhere */
+}
+
+body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-
-/* ===============================
-   POST CARD
-================================ */
-.post-card {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 14px;
-
-  border: 1px solid #e0e7ff;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+.post-body {
+  background: #f4f6fb;
 }
 
 
 /* ===============================
-   TITLE
+   NAVBAR
 ================================ */
-.post-card h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.navbar.light {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 30px;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* ===============================
+   LOGO
+================================ */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;   /* fixed distortion */
+}
+
+.nav-logo-text {
+  font-size: 26px;
   font-weight: 600;
-  color: #4338ca;
+  color: #1e293b;
+}
+
+
+/* ===============================
+   SEARCH BAR
+================================ */
+.nav-search {
+  display: flex;
+  align-items: center;
+
+  width: 480px;
+  max-width: 55%;
+
+  background: #f1f5f9;
+  border-radius: 60px;
+
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.nav-search input {
+  flex: 1;
+  border: none;
+
+  padding: 15px 18px;
+  font-size: 15px;
+
+  background: transparent;
+  outline: none;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 18px;
+  font-size: 16px;
+
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  border: none;
+  color: white;
+
+  cursor: pointer;
+}
+
+
+/* ===============================
+   RIGHT SIDE
+================================ */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+  background: #f1f5f9;
+
+  color: #374151;
+  font-size: 18px;
+
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.nav-icon-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.nav-post-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  color: white;
+
+  font-size: 18px;
+
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+
+  transition: 0.25s;
+}
+
+.nav-post-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  max-width: 850px;   /* widened */
+  margin: 50px auto;
+  padding: 20px;
+}
+
+
+/* ===============================
+   CARD
+================================ */
+.post-card {
+  background: white;
+  padding: 30px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -38,80 +187,98 @@
 ================================ */
 textarea {
   width: 100%;
-  height: 130px;
+  height: 200px;
 
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  padding: 16px;
 
-  font-size: 14px;
-  margin-bottom: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+
+  margin-bottom: 22px;
+
+  font-size: 15px;
+  line-height: 1.5;
 
   resize: none;
-  transition: 0.2s;
 }
 
-/* FOCUS */
 textarea:focus {
-  border-color: #6366f1;
+  border-color: #3b82f6;
   outline: none;
-  box-shadow: 0 0 5px rgba(99,102,241,0.25);
+}
+
+textarea::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
 }
 
 
 /* ===============================
-   BUTTON
+   BUTTONS
 ================================ */
-.submit-btn {
-  width: 100%;
-  padding: 13px;
+.action-buttons {
+  display: flex;
+  gap: 18px;
+}
 
-  border-radius: 10px;
+.btn {
+  flex: 1;
+  padding: 16px;
+
+  border-radius: 12px;
   border: none;
 
   font-size: 15px;
   font-weight: 500;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
   cursor: pointer;
-
-  background: linear-gradient(45deg, #6366f1, #4f46e5);
-  color: white;
-
   transition: 0.25s;
 }
 
-/* HOVER */
-.submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(99,102,241,0.35);
+.attach-btn {
+  background: #e5e7eb;
+  color: #111;
 }
 
-/* CLICK */
-.submit-btn:active {
-  transform: scale(0.97);
+.submit-btn {
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 
 /* ===============================
-   RESULT BOX
+   PREVIEW
 ================================ */
-#resultBox {
-  margin-top: 20px;
+#preview {
+  margin-top: 15px;
 }
 
-/* RESULT CARD */
-.result-card {
-  background: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
-
-  border-left: 4px solid #6366f1;
-
-  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+#preview img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-/* RESULT TEXT */
-.result-card p {
-  margin: 6px 0;
+
+/* ===============================
+   SUCCESS MESSAGE
+================================ */
+.success-box {
+  margin-top: 15px;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #e0f2fe;
+  color: #0369a1;
+
   font-size: 14px;
 }

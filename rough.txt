@@ -1,0 +1,196 @@
+  const keywords = {
+
+    infrastructure: [
+      "fan", "light", "electricity", "power", "switch", "wire", "socket", "bulb",
+      "water", "leak", "pipeline", "pipe", "drain", "sewage", "overflow", "tank",
+      "broken", "repair", "maintenance", "damage", "crack", "wall", "ceiling",
+      "washroom", "toilet", "flush", "basin", "tap", "lift", "elevator",
+      "stairs", "door", "window", "bench", "desk", "classroom", "lab",
+      "equipment", "projector", "ac", "cooler"
+    ],
+
+    academics: [
+      "exam", "marks", "result", "assignment", "submission", "deadline",
+      "lecture", "class", "attendance", "faculty", "teacher", "professor",
+      "course", "subject", "syllabus", "notes", "grading", "evaluation",
+      "internal", "external", "quiz", "midsem", "endsem", "timetable",
+      "schedule", "reschedule", "cancel", "online class", "offline class",
+      "recording", "doubt", "clarification", "rechecking", "backlog",
+      "credit", "cgpa", "sgpa"
+    ],
+
+    hostel: [
+      "hostel", "room", "bed", "mattress", "pillow", "blanket", "cupboard",
+      "locker", "warden", "roommate", "allocation", "shift", "cleaning",
+      "dirty room", "dust", "pest", "insect", "cockroach", "mosquito",
+      "laundry", "washing machine", "dryer", "clothes", "common room",
+      "corridor", "noise", "disturbance", "curfew", "entry time",
+      "exit time", "hostel gate"
+    ],
+
+    food: [
+      "food", "mess", "canteen", "meal", "breakfast", "lunch", "dinner",
+      "snacks", "taste", "quality", "hygiene", "dirty", "spoiled", "stale",
+      "uncooked", "overcooked", "oil", "spicy", "cold food", "hot food",
+      "water quality", "drinking water", "mess staff", "service",
+      "menu", "variety", "portion", "quantity", "food poisoning",
+      "insects", "kitchen", "utensils"
+    ],
+
+    security: [
+      "theft", "stolen", "robbery", "fight", "violence", "harassment",
+      "ragging", "unsafe", "threat", "attack", "abuse", "bullying",
+      "security guard", "guard", "cctv", "camera", "surveillance",
+      "gate", "entry", "exit", "unauthorized", "intruder", "trespassing",
+      "lost item", "missing", "complaint", "police", "emergency",
+      "patrolling", "incident"
+    ],
+
+    health: [
+      "sick", "ill", "fever", "cold", "cough", "infection", "injury",
+      "accident", "pain", "headache", "stomach ache", "food poisoning",
+      "hospital", "clinic", "doctor", "medicine", "treatment", "checkup",
+      "mental health", "stress", "anxiety", "depression", "fatigue",
+      "weakness", "hygiene", "sanitation", "virus", "disease", "first aid"
+    ],
+
+    clubs: [
+      "club", "event", "fest", "cultural", "technical club", "management",
+      "registration", "participation", "volunteer", "organizer", "team",
+      "announcement", "poster", "audition", "selection", "meeting",
+      "schedule", "venue", "coordination", "budget", "funding",
+      "permission", "activity", "workshop", "seminar", "competition",
+      "hackathon", "quiz", "dance", "music", "drama"
+    ],
+
+    sports: [
+      "sports", "ground", "field", "court", "match", "practice", "training",
+      "tournament", "equipment", "kit", "jersey", "coach", "fitness",
+      "gym", "weights", "treadmill", "football", "cricket", "basketball",
+      "volleyball", "badminton", "tennis", "table tennis", "indoor games",
+      "outdoor games", "running track", "stadium", "turf", "playground",
+      "sports complex", "practice ground", "team selection", "referee"
+    ],
+
+    placements: [
+      "placement", "internship", "job", "company", "recruitment", "ctc",
+      "package", "offer", "interview", "selection", "resume", "cv",
+      "shortlist", "eligibility", "criteria", "drive", "aptitude",
+      "coding test", "hr round", "technical round", "mock interview",
+      "training", "preparation", "placement cell", "career",
+      "job portal", "linkedin"
+    ],
+
+    transport: [
+      "bus", "transport", "shuttle", "route", "pickup", "drop", "driver",
+      "delay", "timing", "schedule", "stop", "bus stop", "vehicle",
+      "travel", "pass", "ticket", "availability", "overcrowded",
+      "seat", "breakdown", "maintenance bus", "parking", "traffic"
+    ],
+
+    technical: [
+      "wifi", "internet", "network", "slow internet", "no internet",
+      "server", "portal", "website", "login issue", "logout issue",
+      "error", "bug", "crash", "app", "software", "system", "database",
+      "access", "account", "password", "otp", "server down",
+      "loading issue", "timeout", "computer", "printer", "scanner",
+      "keyboard", "mouse", "it support"
+    ]
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function detectPriority(text) {
+  text = text.toLowerCase();
+
+  const priorityKeywords = {
+    Critical: [
+      "fire", "electric shock", "short circuit", "explosion", "emergency",
+      "danger", "life threat", "injury", "accident", "bleeding", "collapse",
+      "unsafe", "harassment", "attack", "violence", "fight", "robbery",
+      "threat", "assault", "panic", "critical condition", "severe injury",
+      "hospital emergency", "medical emergency", "gas leak", "blast",
+      "fatal", "serious hazard", "security breach", "urgent help"
+    ],
+
+    High: [
+      "urgent", "immediately", "asap", "serious", "not working", "broken",
+      "failure", "down", "no power", "no water", "no internet", "leak",
+      "overflow", "damage", "issue persists", "not available",
+      "malfunction", "stopped working", "critical delay", "service down",
+      "unusable", "blocked", "major issue", "high priority",
+      "system failure", "unresponsive", "error repeatedly"
+    ],
+
+    Medium: [
+      "delay", "inconvenience", "irregular", "unstable", "slow",
+      "wifi issue", "attendance issue", "marks issue", "assignment issue",
+      "maintenance required", "not proper", "moderate issue",
+      "inconsistent", "temporary problem", "needs fixing",
+      "partially working", "lag", "performance issue",
+      "minor damage", "cleaning issue", "timing issue"
+    ],
+
+    Minor: [
+      "suggestion", "request", "improvement", "better", "upgrade",
+      "enhancement", "recommendation", "feedback", "optional",
+      "small issue", "cosmetic", "appearance issue",
+      "not urgent", "low impact", "can be improved",
+      "nice to have", "minor inconvenience"
+    ]
+  };
+
+  const scores = { Critical: 0, High: 0, Medium: 0, Minor: 0 };
+
+  for (let level in priorityKeywords) {
+    priorityKeywords[level].forEach(word => {
+      if (text.includes(word)) scores[level] += 10;
+    });
+  }
+
+  if (
+    text.includes("no ") ||
+    text.includes("not available") ||
+    text.includes("missing") ||
+    text.includes("absent")
+  ) {
+    scores.High += 5;
+    scores.Medium += 5;
+  }
+
+  let final = "Informational";
+  let max = 0;
+
+  for (let level in scores) {
+    if (scores[level] > max) {
+      max = scores[level];
+      final = level;
+    }
+  }
+
+  return final;
+}
